@@ -13,21 +13,34 @@ export class writersBlockTest{
     loginBtn: By = By.xpath('(//button[@type="submit"])[1]')
     //Second Test Selectors
     searchBar: By = By.xpath('(//input[@class="ant-input ant-input-lg"])[2]')// Title to search "Seriously I'm Kidding"
-    filterArrow: By = By.xpath('//span[@class="ant-select-arrow"]')
+    filterArrow: By = By.xpath('//span[@class= "ant-select-selection-item"]')
     searchOptionsMenu: By = By.xpath('(//div[@class="ant-select-item-option-content"])[2]') //Title
     selectedOption: By = By.xpath('//span[@class="ant-select-selection-item"]')//Title 
     searchBtn: By = By.xpath('//button[@class="ant-btn ant-btn-lg ant-btn-icon-only ant-input-search-button"]')
     //Third Test Selectors
-    browseMenu: By= By.xpath('(//li[@class="ant-menu-item ant-menu-item-only-child"])[2]')
-    checkedBox: By = By.xpath('//label[@class="ant-checkbox-wrapper ant-checkbox-wrapper-checked"]')
-    uncheckedBox: By = By.xpath('//label[@class="ant-checkbox-wrapper"]')
-    formatUncollapse:By = By.xpath('(//div[@class="ant-collapse-item"])[2]')
-    formatCollapse: By = By.xpath('(//div[@class="ant-collapse-item ant-collapse-item-active"])[2]')
+    browseMenu: By= By.xpath('//a[text()="Browse"]')
+    checkedBox: By = By.xpath('//input[@id= "0xy"]')
+    uncheckedBox: By = By.xpath('//input[@id= "0xy"]')
+    formatUncollapse:By = By.xpath('//span[text()="Format"]')
+    formatCollapse: By = By.xpath('//span[text()="Format"]') // Purpose of text is to click the text of the element 
+
+    //Fourth Test Selectors 
+    subjectUncollapse:By = By.xpath('//span[text()="Subjects"]')
+    subjectCollapse: By = By.xpath('//span[text()="Subjects"]')
+    fictionSelection: By = By.xpath('//input[@id="fic"]')
+    fictionTopic: By = By.xpath('//input[@id= "fic081"]')
+
 
 
     constructor(driver: WebDriver){
         this.driver =driver
     }
+
+    /*async repeatClick(clickNum, elementClick){ // repeatable functionallity 
+        for (let i = 0; i < clickNum; i++){
+            await this.click(elementClick)
+        }
+    }*/
 
     async navigate() {
         await this.driver.get(this.url);
